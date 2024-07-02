@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manual de Comandos Básicos de Termux</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .command {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #333;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .description {
+            margin-bottom: 20px;
+        }
+        .copy-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .copy-btn:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Manual de Comandos Básicos de Termux</h1>
+        <div class="command">
+            <code>yes|pkg update && yes|pkg upgrade</code>
+            <button class="copy-btn" onclick="copyToClipboard('yes|pkg update && yes|pkg upgrade')">Copiar</button>
+        </div>
+        <div class="description">
+            Actualizar la lista de paquetes.
+        </div>
+        <div class="command">
+            <code>termux-setup-storage</code>
+            <button class="copy-btn" onclick="copyToClipboard('termux-setup-storage')">Copiar</button>
+        </div>
+        <div class="description">
+            Actualizar todos los paquetes instalados.
+        </div>
+        <div class="command">
+            <code>pkg install termux-tools stu -y</code>
+            <button class="copy-btn" onclick="copyToClipboard('pkg install termux-tools stu -y')">Copiar</button>
+        </div>
+        <div class="description">
+            Instalar un paquete.
+        </div>
+        <div class="command">
+            <code>mv /sdcard/Download/close-apps ~</code>
+            <button class="copy-btn" onclick="copyToClipboard('mv /sdcard/Download/close-apps ~')">Copiar</button>
+        </div>
+        <div class="description">
+            Dar acceso a la memoria interna del dispositivo.
+        </div>
+        <div class="command">
+            <code>chmod +x close-apps</code>
+            <button class="copy-btn" onclick="copyToClipboard('chmod +x close-apps')">Copiar</button>
+        </div>
+        <div class="description">
+            Listar todos los paquetes instalados.
+        </div>
+  
+            <div class="command">
+            <code>su -c ./close-apps</code>
+            <button class="copy-btn" onclick="copyToClipboard('su -c ./close-apps')">Copiar</button>
+        </div>
+        <div class="description">
+            Listar todos los paquetes instalados.
+        </div>
+    </div>
+
+    <script>
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(function() {
+                alert('Comando copiado: ' + text);
+            }, function(err) {
+                console.error('Error al copiar: ', err);
+            });
+        }
+    </script>
+</body>
+</html>
